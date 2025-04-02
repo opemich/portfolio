@@ -1,6 +1,5 @@
 "use client";
 
-import { Facebook, Instagram } from "lucide-react";
 import Link from "next/link";
 import { BsInstagram } from "react-icons/bs";
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";

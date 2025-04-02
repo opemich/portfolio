@@ -8,6 +8,7 @@ import { RiHome9Line, RiMenu3Line } from "react-icons/ri";
 import { TfiEmail } from "react-icons/tfi";
 import Link from "next/link";
 import { IoClose } from "react-icons/io5";
+import Image from "next/image";
 
 const sections = [
   { id: "home", label: "Home", icon: <RiHome9Line size={25} /> },
@@ -107,7 +108,7 @@ const Navbar = () => {
     };
   }, []);
 
-  const handleClick = (id) => {
+  const handleClick = (id: string) => {
     setActiveSection(id);
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
     if (isOpen) {
@@ -121,7 +122,7 @@ const Navbar = () => {
       <div className="hidden p-4 lg:flex flex-col items-center h-full">
         {/* Profile Section */}
         <div className="bg-gray-800 p-2 rounded-full">
-          <img
+          <Image
             src="/images/me.jpg"
             alt="Excellent"
             className="w-30 rounded-full"
@@ -199,7 +200,7 @@ const Navbar = () => {
       >
         {/* Profile Section */}
         <div className="bg-gray-800 p-2 rounded-full">
-          <img
+          <Image
             src="/images/me.jpg"
             alt="Excellent"
             className="w-30 rounded-full"

@@ -38,7 +38,7 @@ const About = () => {
         {/* Description */}
         <div className="flex-1 text-black text-lg animate-fadeInLeft">
           <p className="mb-4">
-            Hi, I'm <span className="text-blue-500 font-semibold">Excellent Michael</span>,  
+            Hi, I&apos;m <span className="text-blue-500 font-semibold">Excellent Michael</span>,  
             a passionate <span className="text-blue-500 font-semibold">Frontend Developer </span>  
             dedicated to crafting stunning and high-performance web applications.  
             With a strong foundation in <span className="text-blue-500">HTML, CSS, JavaScript, and modern frameworks</span>,  
@@ -51,7 +51,7 @@ const About = () => {
             while keeping up with the latest trends in web development.
           </p>
           <p className="mb-4">
-            Whether it's **developing web applications, optimizing performance, or integrating APIs**,  
+            Whether it&apos;s **developing web applications, optimizing performance, or integrating APIs**,  
             I bring creativity and technical expertise to deliver high-quality digital experiences.
           </p>
         </div>

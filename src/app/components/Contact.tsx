@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import { Mail, Phone, MapPin, Github, Linkedin, Twitter } from "lucide-react";
+import { ChangeEvent } from "react";
+import { Mail, Phone, Github, Linkedin, Twitter } from "lucide-react";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -17,7 +18,15 @@ const Contact = () => {
     message: "",
   });
 
-  const handleChange = (e) => {
+  // const handleChange = (e) => {
+  //   const { name, value } = e.target;
+  //   setFormData((prevData) => ({
+  //     ...prevData,
+  //     [name]: value,
+  //   }));
+  // };
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
       ...prevData,
@@ -25,7 +34,7 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (!formData.name || !formData.email || !formData.message) {
@@ -65,7 +74,7 @@ const Contact = () => {
       setFormStatus({
         submitted: false,
         error: true,
-        message: error.message || "Failed to send message.",
+        message: error instanceof Error ? error.message : "Failed to send message.",
       });
     }
   };
@@ -75,7 +84,7 @@ const Contact = () => {
       <div className="mb-8">
         <h2 className="text-2xl font-bold text-gray-900">Get In Touch</h2>
         <p className="mt-2 text-black">
-          I'd love to hear about your project. Let's work together!
+          I&apos;d love to hear about your project. Let&apos;s work together!
         </p>
       </div>
 
@@ -236,7 +245,7 @@ const Contact = () => {
                 <textarea
                   id="message"
                   name="message"
-                  rows="5"
+                  rows={5}
                   value={formData.message}
                   onChange={handleChange}
                   className="w-full px-3 py-2 text-sm border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500 bg-gray-900 text-white"

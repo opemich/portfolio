@@ -125,7 +125,9 @@ const Navbar = () => {
           <Image
             src="/images/me.jpg"
             alt="Excellent"
-            className="w-30 rounded-full"
+            className="rounded-full"
+            width={130}
+            height={50}
           />
         </div>
         <p className="text-white text-2xl mt-3">Excellent Michael</p>
@@ -203,7 +205,9 @@ const Navbar = () => {
           <Image
             src="/images/me.jpg"
             alt="Excellent"
-            className="w-30 rounded-full"
+            className="rounded-full"
+            width={130}
+            height={50}
           />
         </div>
         <p className="text-white text-2xl mt-3">Excellent Michael</p>

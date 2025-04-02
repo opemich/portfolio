@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { ChangeEvent } from "react";
-import { Mail, Phone, Github, Linkedin, Twitter } from "lucide-react";
+import { Mail, Phone, Github, Linkedin, Twitter, Facebook, Instagram } from "lucide-react";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -156,6 +156,20 @@ const Contact = () => {
                 className="text-white hover:text-blue-500"
               >
                 <Twitter size={18} />
+              </a>
+              <a
+                href="https://web.facebook.com/profile.php?id=100084169692839"
+                target="_blank"
+                className="text-white hover:text-blue-500"
+              >
+                <Facebook size={18} />
+              </a>
+              <a
+                href="/instagram"
+                target="_blank"
+                className="text-white hover:text-blue-500"
+              >
+                <Instagram size={18} />
               </a>
             </div>
           </div>

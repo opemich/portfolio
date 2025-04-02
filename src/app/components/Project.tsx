@@ -8,7 +8,7 @@ const projects = [
     title: "Charcoal Game",
     description:
       "Charcoal Game is an interactive spin machine game built with Next.js and Tailwind CSS, for a Telegram-bot-based application. It features smooth animations, responsive design, and a dynamic gaming experience. Players can engage with a visually appealing UI and enjoy a seamless gaming session.",
-    image: "/images/charcoal.png",
+    image: "/images/Charcoal.png",
     techStack: ["Next.js", "Tailwind CSS", "Framer Motion", "Telegram Bot"],
     link: "#",
   },

@@ -96,15 +96,20 @@ import Image from "next/image";
 const skills = [
   { name: "HTML", level: 95 },
   { name: "CSS", level: 90 },
-  { name: "JavaScript", level: 85 },
-  { name: "TypeScript", level: 80 },
+  { name: "JavaScript", level: 90 },
+  { name: "TypeScript", level: 85 },
   { name: "React.js", level: 90 },
   { name: "Next.js", level: 85 },
   { name: "Tailwind CSS", level: 95 },
-  { name: "Motion (for animation)", level: 75 }, // Changed from Framer Motion
-  { name: "Git & GitHub", level: 85 },
+  { name: "Motion (for animation)", level: 75 },
+  { name: "Node.js", level: 85 },
+  { name: "Express.js", level: 80 },
+  { name: "MongoDB", level: 80 },
+  { name: "JWT Auth", level: 80 },
+  { name: "Git & GitHub", level: 90 },
   { name: "UI/UX Design", level: 80 },
 ];
+
 
 const About = () => {
   return (

@@ -13,8 +13,7 @@ const Footer = () => {
         <div>
           <h2 className="text-xl font-bold">About Me</h2>
           <p className="mt-2 text-gray-400">
-            Passionate Frontend Developer specializing in modern web
-            technologies like Next.js, React, and Tailwind CSS.
+            Passionate Full-Stack Developer with experience in both frontend and backend technologies, including Next.js, React, Tailwind CSS, Node.js, and MongoDB.
           </p>
         </div>
 
@@ -107,8 +106,7 @@ const Footer = () => {
 
       {/* Copyright */}
       <div className="mt-6 text-center border-t border-gray-700 pt-4 text-gray-500 text-sm">
-        &copy; {new Date().getFullYear()} Excellent Michael. All Rights
-        Reserved.
+        &copy; {new Date().getFullYear()} Prex. All Rights Reserved.
       </div>
     </footer>
   );

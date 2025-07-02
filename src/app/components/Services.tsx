@@ -49,7 +49,22 @@ const services = [
       "Creating inclusive websites that follow WCAG guidelines, ensuring your site is accessible to everyone.",
     icon: <BiGlobe size={40} className="text-blue-500" />,
   },
+  {
+    id: 7,
+    title: "Backend API Development",
+    description:
+      "Designing secure and scalable backend APIs with Node.js, Express, and MongoDB, using best practices in REST architecture and token-based authentication.",
+    icon: <FaCode size={40} className="text-blue-500" />,
+  },
+  {
+    id: 8,
+    title: "Full-Stack Application Development",
+    description:
+      "Delivering end-to-end web solutions by integrating frontend and backend technologies. Includes authentication, dashboard systems, and database integration.",
+    icon: <FaLaptopCode size={40} className="text-blue-500" />,
+  },
 ];
+
 
 const Services = () => {
   const [hoveredService, setHoveredService] = useState<number | null>(null);

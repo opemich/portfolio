@@ -28,6 +28,32 @@ const projects = [
     ],
     link: "https://clemsatd.com/",
   },
+  {
+    id: "weconnect",
+    title: "WeConnect",
+    description:
+      "WeConnect is a full-stack user dashboard and authentication system built with TypeScript. It features secure login, JWT token validation, email-based password resets, and a customizable dashboard with settings, account management, and modern UI elements.",
+    image: "/images/weconnect.jpeg",
+    techStack: [
+      "Next.js",
+      "TypeScript",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "JWT",
+      "Tailwind CSS",
+    ],
+    link: "https://we-connect-front.vercel.app/",
+  },
+  {
+    id: "amazon-clone",
+    title: "Amazon Clone",
+    description:
+      "A clean frontend clone of the Amazon homepage using NestJS and TypeScript. The project includes a carousel powered by Swiper, responsive layouts, category navigation, and a basic add-to-cart flow (without backend integration).",
+    image: "/images/amazon.png",
+    techStack: ["NestJS", "TypeScript", "Tailwind CSS", "Swiper", "Next.js"],
+    link: "https://amazon-clone.empty.com",
+  },
 ];
 
 const Project = () => {

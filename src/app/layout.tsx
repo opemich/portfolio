@@ -13,8 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "My Portfolio",
-  description: "Hey, I’m Excellent Michael—a passionate web developer crafting visually stunning and smooth user experiences with Next.js and Tailwind CSS. Let’s build something amazing!",
+  title: "Excellent Michael(Prex)",
+  description:
+    "Hey, I’m Excellent Michael—a passionate web developer crafting visually stunning and smooth user experiences with Next.js and Tailwind CSS. Let’s build something amazing!",
 };
 
 export default function RootLayout({

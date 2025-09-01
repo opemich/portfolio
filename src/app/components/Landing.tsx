@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 const Landing = () => {
   const typewriterText = useTypewriter(
-    "I'm a full-stack web developer specializing in modern frontend and backend development.",
+    "I'm a full-stack developer specializing in modern frontend and backend development.",
     50
   );
 
@@ -23,7 +23,7 @@ const Landing = () => {
           transition={{ duration: 0.8 }}
         >
           <motion.h1 
-            className="text-6xl md:text-8xl font-bold bg-gradient-to-r from-white via-blue-200 to-purple-200 bg-clip-text text-transparent mb-6"
+            className="text-6xl md:text-8xl font-bold text-gray-100 mb-6"
             initial={{ scale: 0.5, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 1, delay: 0.2 }}

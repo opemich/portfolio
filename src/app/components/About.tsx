@@ -34,7 +34,7 @@ const About = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent mb-4">
+          <h2 className="text-5xl md:text-6xl font-bold  mb-4">
             About Me
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full"></div>
@@ -110,7 +110,7 @@ const About = () => {
             </div>
           </motion.div>
 
-          {/* Skills: full-width row below the two columns on desktop; still third in order on mobile */}
+          {/* Skills */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}

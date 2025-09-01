@@ -60,6 +60,17 @@ const projects = [
     link: "https://amazon-clone.empty.com",
     category: "Frontend Development",
   },
+  {
+  id: "luma-event-site",
+  title: "Luma Event Site",
+  description:
+    "Full-stack events app where creators can save events as Draft or Publish, sell tickets via Flutterwave, issue email/NFT-style tickets with attendee check-in, and browse a vendor marketplace (photography, videography, planning, etc.). Includes an admin panel to manage events, users, vendors, services, and posts.",
+  image: "/images/luma.png",
+  techStack: ["Next.js", "React", "Flutterwave", "Tailwind CSS", "Clerk", "Node.js", "Express", "MongoDB", "Mongoose", "Nodemailer"],
+  link: "https://luma-rouge-one.vercel.app/",
+  category: "Full Stack Development",
+}
+
 ];
 
 const Project = () => {

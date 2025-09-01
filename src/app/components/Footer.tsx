@@ -4,109 +4,81 @@ import Link from "next/link";
 import { BsInstagram } from "react-icons/bs";
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa6";
+import { motion } from "framer-motion"
+import {
+  Mail,
+  Phone,
+  Github,
+  Linkedin,
+  Twitter,
+  Facebook,
+  Instagram,
+  MapPin,
+} from "lucide-react";
 
 const Footer = () => {
-  return (
-    <footer className="bg-gray-900 text-white py-8 px-6 mt-16">
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
-        {/* About Section */}
-        <div>
-          <h2 className="text-xl font-bold">About Me</h2>
-          <p className="mt-2 text-gray-400">
-            Passionate Full-Stack Developer with experience in both frontend and backend technologies, including Next.js, React, Tailwind CSS, Node.js, and MongoDB.
-          </p>
-        </div>
 
-        {/* Quick Links */}
-        <div>
-          <h2 className="text-xl font-bold">Quick Links</h2>
-          <ul className="mt-2 space-y-2">
-            <li>
-              <Link
-                href="/#about"
-                className="hover:text-blue-500 transition-colors hover:underline hover:underline-offset-4"
-              >
-                About
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/#projects"
-                className="hover:text-blue-500 transition-colors hover:underline hover:underline-offset-4"
-              >
-                Projects
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/#services"
-                className="hover:text-blue-500 transition-colors hover:underline hover:underline-offset-4"
-              >
-                Services
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/#contact"
-                className="hover:text-blue-500 transition-colors hover:underline hover:underline-offset-4"
-              >
-                Contact
-              </Link>
-            </li>
-          </ul>
-        </div>
-
-        {/* Social Media */}
-        <div>
-          <h2 className="text-xl font-bold">Connect With Me</h2>
-          <div className="mt-3 flex justify-center md:justify-start space-x-4">
-            <a
-              href="https://github.com/opemich"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-blue-500 transition-transform transform hover:scale-110"
-            >
-              <FaGithub size={24} />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/onaopemipo-michael-784147300/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-blue-500 transition-transform transform hover:scale-110"
-            >
-              <FaLinkedin size={24} />
-            </a>
-            <a
-              href="https://x.com/Priest077"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-blue-500 transition-transform transform hover:scale-110"
-            >
-              <FaTwitter size={24} />
-            </a>
-            <a
-              href="https://web.facebook.com/profile.php?id=100084169692839"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-blue-500"
-            >
-              <FaFacebook size={20} />
-            </a>
-            <a
-              href="https://www.instagram.com/yourprofile"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-blue-500"
-            >
-              <BsInstagram size={20} />
-            </a>
+return (
+    <footer className="bg-black text-white py-12 px-6 border-t-2">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-8 mb-8">
+          <div>
+            <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+              Excellent Michael(Prex)
+            </h3>
+            <p className="text-gray-400 leading-relaxed">
+              Passionate Full-Stack Developer creating innovative digital solutions 
+              with cutting-edge technologies and creative problem-solving.
+            </p>
+          </div>
+          
+          <div>
+            <h4 className="font-semibold mb-4 text-white">Quick Links</h4>
+            <div className="space-y-2">
+              {['About', 'Services', 'Projects', 'Contact'].map((link) => (
+                <a
+                  key={link}
+                  href={`#${link.toLowerCase()}`}
+                  className="block text-gray-400 hover:text-blue-400 transition-colors duration-300 hover:translate-x-2 transform"
+                >
+                  {link}
+                </a>
+              ))}
+            </div>
+          </div>
+          
+          <div>
+            <h4 className="font-semibold mb-4 text-white">Connect</h4>
+            <div className="flex gap-4">
+              {[
+                { icon: Github, href: "https://github.com/opemich" },
+                { icon: Linkedin, href: "https://www.linkedin.com/in/onaopemipo-michael-784147300/" },
+                { icon: Twitter, href: "https://x.com/Priest077" },
+                { icon: Mail, href: "mailto:excellentmichael2110@gmail.com" },
+              ].map((social, index) => {
+                const Icon = social.icon;
+                return (
+                  <motion.a
+                    key={index}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ scale: 1.2, y: -2 }}
+                    className="w-10 h-10 bg-white/5 backdrop-blur-sm rounded-lg flex items-center justify-center text-gray-400 hover:text-white border border-white/10 hover:border-white/20 transition-all duration-300"
+                  >
+                    <Icon size={18} />
+                  </motion.a>
+                );
+              })}
+            </div>
           </div>
         </div>
-      </div>
-
-      {/* Copyright */}
-      <div className="mt-6 text-center border-t border-gray-700 pt-4 text-gray-500 text-sm">
-        &copy; {new Date().getFullYear()} Prex. All Rights Reserved.
+        
+        <div className="border-t border-gray-800 pt-8 text-center">
+          <p className="text-gray-400">
+            &copy; {new Date().getFullYear()} Excellent Michael(Prex). All rights reserved.
+          </p>
+        </div>
       </div>
     </footer>
   );

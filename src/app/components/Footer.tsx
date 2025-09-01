@@ -1,19 +1,11 @@
 "use client";
 
-import Link from "next/link";
-import { BsInstagram } from "react-icons/bs";
-import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
-import { FaFacebook } from "react-icons/fa6";
 import { motion } from "framer-motion"
 import {
   Mail,
-  Phone,
   Github,
   Linkedin,
   Twitter,
-  Facebook,
-  Instagram,
-  MapPin,
 } from "lucide-react";
 
 const Footer = () => {

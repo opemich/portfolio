@@ -100,14 +100,6 @@ const Navbar = () => {
     };
   }, []);
 
-  const handleClick = (id: string) => {
-    setActiveSection(id);
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-    if (isOpen) {
-      setIsOpen(false); // Close the menu on link click
-    }
-  };
-
   return (
     <nav className="relative h-screen bg-gray-900">
       {/* Desktop Navigation */}

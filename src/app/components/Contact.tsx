@@ -104,11 +104,11 @@ const Contact = () => {
           className="text-center mb-16"
         >
           <h2 className="text-5xl md:text-6xl font-bold text-white mb-4">
-            Let's Work Together
+            Let&apos;s Work Together
           </h2>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            Ready to bring your ideas to life? Let's create something amazing
-            together.
+            Ready to bring your ideas to life? Let&apos;s create something
+            amazing together.
           </p>
         </motion.div>
 
@@ -125,9 +125,10 @@ const Contact = () => {
                 Get In Touch
               </h3>
               <p className="text-gray-400 text-lg leading-relaxed mb-8">
-                I'm always interested in hearing about new projects and
-                opportunities. Whether you're a company looking to hire, or
-                you're someone with an idea, I'd love to hear from you.
+                I&apos;m always interested in hearing about new projects and
+                opportunities. Whether you&apos;re a company looking to hire, or
+                you&apos;re someone with an idea, I&apos;d love to hear from
+                you.
               </p>
             </div>
 
@@ -321,6 +322,20 @@ const Contact = () => {
                   )}
                 </motion.button>
               </form>
+              {/* Status Display section */}
+              {formStatus.message && (
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className={`mt-6 p-4 rounded-xl text-center ${
+                    formStatus.error
+                      ? "bg-red-500/20 border border-red-500/30 text-red-200"
+                      : "bg-green-500/20 border border-green-500/30 text-green-200"
+                  }`}
+                >
+                  {formStatus.message}
+                </motion.div>
+              )}
             </div>
           </motion.div>
         </div>

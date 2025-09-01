@@ -2,11 +2,6 @@
 
 import { Code, Database, Palette, Server, Smartphone, Zap } from "lucide-react";
 import { motion } from "framer-motion";
-import { useState } from "react";
-import { BiGlobe } from "react-icons/bi";
-import { CgSmartphone } from "react-icons/cg";
-import { FaCode, FaLaptopCode, FaPaintBrush } from "react-icons/fa";
-import { FaGauge } from "react-icons/fa6";
 import { FloatingParticles } from "./FloatingParticules";
 
 const services = [
@@ -49,7 +44,6 @@ const services = [
   ];
 
 const Services = () => {
-  const [hoveredService, setHoveredService] = useState<number | null>(null);
 
 return (
     <section id="service" className="min-h-screen py-20 px-6 bg-gradient-to-b from-gray-900 to-black relative">

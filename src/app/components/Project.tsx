@@ -109,9 +109,6 @@ const Project = () => {
                   <div className="absolute top-4 left-4 px-3 py-1 bg-gray-900 backdrop-blur-sm rounded-full text-white text-sm font-medium">
                     {project.category}
                   </div>
-                  {/* <div className="absolute inset-0 flex items-center justify-center text-white text-4xl font-bold">
-                    {project.title}
-                  </div> */}
                 </div>
 
                 {/* Project Content */}
@@ -125,7 +122,7 @@ const Project = () => {
 
                   {/* Tech Stack */}
                   <div className="flex flex-wrap gap-2 mb-6">
-                    {project.techStack.map((tech, idx) => (
+                    {project.techStack.map((tech) => (
                       <span
                         key={tech}
                         className="px-3 py-1 bg-gradient-to-r from-blue-100 to-purple-100 text-blue-800 rounded-full text-sm font-medium"
@@ -170,7 +167,7 @@ const Project = () => {
             }
             className="px-8 py-4 border-2 border-gray-300 text-gray-700 rounded-full font-semibold hover:border-blue-500 hover:text-blue-600 transition-all duration-300"
           >
-            Let's Discuss Your Project
+            Let&apos;s Discuss Your Project
           </motion.button>
         </motion.div>
       </div>

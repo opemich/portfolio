@@ -94,7 +94,7 @@ const About = () => {
           >
             <div className="space-y-4 text-gray-700 text-lg leading-relaxed">
               <p>
-                Hi, I'm{" "}
+                Hi, I&apos;m{" "}
                 <span className="font-bold text-blue-600">Excellent Michael(Prex)</span>, a passionate{" "}
                 <span className="font-bold text-purple-600">Full-Stack Developer</span>{" "}
                 dedicated to building stunning, high-performance web applications from front to back.

@@ -11,7 +11,7 @@ const skills = [
   { name: "React.js", level: 90, color: "from-blue-500 to-cyan-500" },
   { name: "Next.js", level: 85, color: "from-green-600 to-green-800" },
   { name: "Tailwind CSS", level: 95, color: "from-blue-500 to-cyan-500" },
-  { name: "Motion (for animation)", level: 75, color: "from-gray-700 to-gray-900" },
+  { name: "Framer Motion (for animation)", level: 75, color: "from-gray-700 to-gray-900" },
   { name: "Node.js", level: 85, color: "from-green-600 to-green-800" },
   { name: "Express.js", level: 80, color: "from-green-500 to-green-700" },
   { name: "MongoDB", level: 80, color: "from-green-500 to-green-700" },
@@ -78,7 +78,7 @@ const About = () => {
               className="absolute -bottom-4 -left-4 bg-white rounded-2xl p-4 shadow-xl border border-gray-100"
             >
               <div className="text-center">
-                <div className="text-2xl font-bold text-purple-600">50+</div>
+                <div className="text-2xl font-bold text-purple-600">10+</div>
                 <div className="text-sm text-gray-600">Projects Done</div>
               </div>
             </motion.div>
@@ -95,7 +95,7 @@ const About = () => {
             <div className="space-y-4 text-gray-700 text-lg leading-relaxed">
               <p>
                 Hi, I&apos;m{" "}
-                <span className="font-bold text-blue-600">Excellent Michael(Prex)</span>, a passionate{" "}
+                <span className="font-bold text-blue-600">Excellent Michael(Pyrex)</span>, a passionate{" "}
                 <span className="font-bold text-purple-600">Full-Stack Developer</span>{" "}
                 dedicated to building stunning, high-performance web applications from front to back.
               </p>

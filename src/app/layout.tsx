@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Excellent Michael(Prex)",
+  title: "Excellent Michael(Pyrex)",
   description:
     "Hey, I’m Excellent Michael—a passionate web developer crafting visually stunning and smooth user experiences with Next.js and Tailwind CSS. Let’s build something amazing!",
 };

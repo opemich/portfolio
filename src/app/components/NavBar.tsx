@@ -111,8 +111,8 @@ const Navbar = () => {
         <div className="flex flex-col items-center justify-center w-full p-8">
           {/* Profile Section */}
           <motion.div whileHover={{ scale: 1.05 }} className="mb-8 text-center">
-            <div className="relative mb-4">
-              <div className="w-32 h-32 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full p-1">
+            <div className="mb-4">
+              <div className="w-32 h-32 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full p-1 mx-auto">
                 <div className="w-full h-full bg-gray-800 rounded-full flex items-center justify-center text-white text-2xl font-bold">
                   <Image
                     src="/images/me.jpg"
@@ -123,7 +123,6 @@ const Navbar = () => {
                   />
                 </div>
               </div>
-              <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-green-500 rounded-full border-4 border-gray-900"></div>
             </div>
             <h2 className="text-2xl font-bold text-white mb-2">
               Excellent Michael

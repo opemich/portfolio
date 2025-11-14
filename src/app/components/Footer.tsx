@@ -16,7 +16,7 @@ return (
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           <div>
             <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-              Excellent Michael(Prex)
+              Excellent Michael(Pyrex)
             </h3>
             <p className="text-gray-400 leading-relaxed">
               Passionate Full-Stack Developer creating innovative digital solutions 
@@ -46,7 +46,7 @@ return (
                 { icon: Github, href: "https://github.com/opemich" },
                 { icon: Linkedin, href: "https://www.linkedin.com/in/onaopemipo-michael-784147300/" },
                 { icon: Twitter, href: "https://x.com/Priest077" },
-                { icon: Mail, href: "mailto:excellentmichael2110@gmail.com" },
+                { icon: Mail, href: "mailto:onaopemipomichael1999@gmail.com" },
               ].map((social, index) => {
                 const Icon = social.icon;
                 return (
@@ -68,7 +68,7 @@ return (
         
         <div className="border-t border-gray-800 pt-8 text-center">
           <p className="text-gray-400">
-            &copy; {new Date().getFullYear()} Excellent Michael(Prex). All rights reserved.
+            &copy; {new Date().getFullYear()} Excellent Michael(Pyrex). All rights reserved.
           </p>
         </div>
       </div>

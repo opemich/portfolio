@@ -1,12 +1,21 @@
 "use client";
 
 import { motion } from "framer-motion"
-import {
-  Mail,
-  Github,
-  Linkedin,
-  Twitter,
-} from "lucide-react";
+// import {
+//   Mail,
+//   Github,
+//   Linkedin,
+//   Twitter,
+// } from "lucide-react";
+import * as Icons from "lucide-react";
+import { socialLinks, personalInfo } from "@/data";
+
+const iconMap: Record<string, React.ElementType> = {
+  github: Icons.Github,
+  linkedin: Icons.Linkedin,
+  twitter: Icons.Twitter,
+  mail: Icons.Mail,
+};
 
 const Footer = () => {
 
@@ -16,11 +25,10 @@ return (
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           <div>
             <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-              Excellent Michael(Pyrex)
+              {personalInfo.name}
             </h3>
             <p className="text-gray-400 leading-relaxed">
-              Passionate Full-Stack Developer creating innovative digital solutions 
-              with cutting-edge technologies and creative problem-solving.
+              {personalInfo.shortBio}
             </p>
           </div>
           
@@ -42,13 +50,14 @@ return (
           <div>
             <h4 className="font-semibold mb-4 text-white">Connect</h4>
             <div className="flex gap-4">
-              {[
+              {/* {[
                 { icon: Github, href: "https://github.com/opemich" },
                 { icon: Linkedin, href: "https://www.linkedin.com/in/onaopemipo-michael-784147300/" },
                 { icon: Twitter, href: "https://x.com/Priest077" },
                 { icon: Mail, href: "mailto:onaopemipomichael1999@gmail.com" },
-              ].map((social, index) => {
-                const Icon = social.icon;
+              ].map((social, index) => { */}
+              {socialLinks.map((social, index) => {
+                const IconMap = iconMap[social.icon] || Icons.HelpCircle;
                 return (
                   <motion.a
                     key={index}
@@ -58,7 +67,7 @@ return (
                     whileHover={{ scale: 1.2, y: -2 }}
                     className="w-10 h-10 bg-white/5 backdrop-blur-sm rounded-lg flex items-center justify-center text-gray-400 hover:text-white border border-white/10 hover:border-white/20 transition-all duration-300"
                   >
-                    <Icon size={18} />
+                    <IconMap size={18} />
                   </motion.a>
                 );
               })}

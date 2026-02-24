@@ -17,6 +17,15 @@ import {
   Instagram,
   Facebook,
 } from "lucide-react";
+import { socialLinks } from "@/data";
+
+const iconMap: Record<string, React.ElementType> = {
+  Github,
+  Linkedin,
+  Twitter,
+  Instagram,
+  Facebook,
+};
 
 const sections = [
   { id: "home", label: "Home", icon: RiHome9Line },
@@ -48,7 +57,7 @@ const Navbar = () => {
         rootMargin: "0px",
         // threshold is the percentage of the element that needs to be visible
         threshold: [0.3, 0.4, 0.5],
-      }
+      },
     );
 
     // Observe all sections
@@ -166,34 +175,8 @@ const Navbar = () => {
 
           {/* Social Links */}
           <div className="mt-8 flex gap-4">
-            {[
-              {
-                icon: Github,
-                href: "https://github.com/opemich",
-                color: "hover:text-gray-400",
-              },
-              {
-                icon: Linkedin,
-                href: "https://www.linkedin.com/in/onaopemipo-michael-784147300/",
-                color: "hover:text-blue-400",
-              },
-              {
-                icon: Twitter,
-                href: "https://x.com/Priest077",
-                color: "hover:text-sky-400",
-              },
-              {
-                icon: Instagram,
-                href: "https://www.instagram.com/prie_st0/",
-                color: "hover:text-sky-400",
-              },
-              {
-                icon: Facebook,
-                href: "https://web.facebook.com/profile.php?id=100084169692839",
-                color: "hover:text-blue-400",
-              },
-            ].map((social, index) => {
-              const Icon = social.icon;
+            {socialLinks.map((social, index) => {
+              const Icon = iconMap[social.icon];
               return (
                 <motion.a
                   key={index}
@@ -201,9 +184,9 @@ const Navbar = () => {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`text-gray-400 transition-colors ${social.color}`}
+                  className="text-gray-400 hover:text-white transition-colors"
                 >
-                  <Icon size={20} />
+                  {Icon && <Icon size={20} />}
                 </motion.a>
               );
             })}
@@ -270,34 +253,8 @@ const Navbar = () => {
 
                 {/* Mobile Social Links */}
                 <div className="mt-4 flex gap-4 lg:hidden">
-                  {[
-                    {
-                      icon: Github,
-                      href: "https://github.com/opemich",
-                      color: "hover:text-gray-400",
-                    },
-                    {
-                      icon: Linkedin,
-                      href: "https://www.linkedin.com/in/onaopemipo-michael-784147300/",
-                      color: "hover:text-blue-400",
-                    },
-                    {
-                      icon: Twitter,
-                      href: "https://x.com/Priest077",
-                      color: "hover:text-sky-400",
-                    },
-                    {
-                      icon: Instagram,
-                      href: "https://www.instagram.com/prie_st0/",
-                      color: "hover:text-sky-400",
-                    },
-                    {
-                      icon: Facebook,
-                      href: "https://web.facebook.com/profile.php?id=100084169692839",
-                      color: "hover:text-blue-400",
-                    },
-                  ].map((social, index) => {
-                    const Icon = social.icon;
+                  {socialLinks.map((social, index) => {
+                    const Icon = iconMap[social.icon];
                     return (
                       <motion.a
                         key={index}
@@ -305,9 +262,9 @@ const Navbar = () => {
                         href={social.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={`text-gray-400 transition-colors ${social.color}`}
+                        className="text-gray-400 hover:text-white transition-colors"
                       >
-                        <Icon size={20} />
+                        {Icon && <Icon size={20} />}
                       </motion.a>
                     );
                   })}

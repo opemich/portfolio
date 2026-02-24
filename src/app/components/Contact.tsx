@@ -14,6 +14,18 @@ import {
   MapPin,
 } from "lucide-react";
 import { FloatingParticles } from "./FloatingParticules";
+import { contactInfo, socialLinks, personalInfo } from "@/data";
+
+const iconMap: Record<string, React.ElementType> = {
+  Mail,
+  Phone,
+  Github,
+  Linkedin,
+  Twitter,
+  Facebook,
+  Instagram,
+  MapPin,
+};
 
 const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -31,7 +43,7 @@ const Contact = () => {
   });
 
   const handleChange = (
-    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
@@ -133,27 +145,8 @@ const Contact = () => {
             </div>
 
             <div className="space-y-6">
-              {[
-                {
-                  icon: Mail,
-                  label: "Email",
-                  value: "excellentmichael2110@gmail.com",
-                  href: "mailto:excellentmichael2110@gmail.com",
-                },
-                {
-                  icon: Phone,
-                  label: "Phone",
-                  value: "+234 806 668 8966",
-                  href: "tel:+2348066688966",
-                },
-                {
-                  icon: MapPin,
-                  label: "Location",
-                  value: "Lagos, Nigeria",
-                  href: "#",
-                },
-              ].map((contact, index) => {
-                const Icon = contact.icon;
+              {contactInfo.map((contact, index) => {
+                const Icon = iconMap[contact.icon] || Mail;
                 return (
                   <motion.a
                     key={contact.label}
@@ -184,34 +177,8 @@ const Contact = () => {
             <div className="pt-8">
               <h4 className="text-white font-semibold mb-4">Follow Me</h4>
               <div className="flex gap-4">
-                {[
-                  {
-                    icon: Github,
-                    href: "https://github.com/opemich",
-                    color: "hover:text-gray-400",
-                  },
-                  {
-                    icon: Linkedin,
-                    href: "https://www.linkedin.com/in/onaopemipo-michael-784147300/",
-                    color: "hover:text-blue-400",
-                  },
-                  {
-                    icon: Twitter,
-                    href: "https://x.com/Priest077",
-                    color: "hover:text-sky-400",
-                  },
-                  {
-                    icon: Instagram,
-                    href: "https://www.instagram.com/prie_st0/",
-                    color: "hover:text-sky-400",
-                  },
-                  {
-                    icon: Facebook,
-                    href: "https://web.facebook.com/profile.php?id=100084169692839",
-                    color: "hover:text-blue-400",
-                  },
-                ].map((social, index) => {
-                  const Icon = social.icon;
+                {socialLinks.map((social, index) => {
+                  const Icon = iconMap[social.icon] || Github;
                   return (
                     <motion.a
                       key={index}
@@ -220,7 +187,7 @@ const Contact = () => {
                       rel="noopener noreferrer"
                       whileHover={{ scale: 1.2, y: -5 }}
                       whileTap={{ scale: 0.9 }}
-                      className={`w-12 h-12 bg-white/5 backdrop-blur-sm rounded-xl flex items-center justify-center text-gray-400 border border-white/10 hover:border-white/20 transition-all duration-300 ${social.color}`}
+                      className="w-12 h-12 bg-white/5 backdrop-blur-sm rounded-xl flex items-center justify-center text-gray-400 border border-white/10 hover:border-white/20 transition-all duration-300 hover:text-white"
                     >
                       <Icon size={20} />
                     </motion.a>

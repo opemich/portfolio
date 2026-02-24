@@ -1,190 +1,198 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion"
-import { ExternalLink } from "lucide-react";
+import { motion } from "framer-motion";
+import { ArrowUpRight, Smartphone } from "lucide-react";
+import Link from "next/link";
+import { projects } from "@/data";
 
-const projects = [
-  {
-    id: "charcoal-game",
-    title: "Charcoal Game",
-    description:
-      "Charcoal Game is an interactive spin machine game built with Next.js and Tailwind CSS, for a Telegram-bot-based application. It features smooth animations, responsive design, and a dynamic gaming experience. Players can engage with a visually appealing UI and enjoy a seamless gaming session.",
-    image: "/images/Charcoal.png",
-    techStack: ["Next.js", "Tailwind CSS", "Framer Motion", "Telegram Bot"],
-    link: "https://t.me/charcoal_gamebot",
-    category: "Game Development",
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: { staggerChildren: 0.08 },
   },
-  {
-    id: "clemsatd-travel",
-    title: "Clemsatd Travel Agency",
-    description:
-      "Clemsatd Travel Agency is a modern, responsive travel booking website. It allows users to explore travel destinations, check flight and hotel availability, and make secure bookings. The site is optimized for performance, accessibility and responsive design.",
-    image: "/images/clemsatd.jpg",
-    techStack: [
-      "HTML",
-      "CSS",
-      "Bootstrap",
-      "jQuery",
-      "JavaScript",
-      "Responsiveness",
-    ],
-    link: "https://clemsatd.com/",
-    category: "Web Development",
-  },
-  {
-    id: "weconnect",
-    title: "WeConnect",
-    description:
-      "WeConnect is a full-stack user dashboard and authentication system built with TypeScript. It features secure login, JWT token validation, email-based password resets, and a customizable dashboard with settings, account management, and modern UI elements.",
-    image: "/images/weconnect.jpeg",
-    techStack: [
-      "Next.js",
-      "TypeScript",
-      "Node.js",
-      "Express",
-      "MongoDB",
-      "JWT",
-      "Tailwind CSS",
-    ],
-    link: "https://we-connect-front.vercel.app/",
-    category: "Full Stack Development",
-  },
-  {
-    id: "amazon-clone",
-    title: "Amazon Clone",
-    description:
-      "A clean frontend clone of the Amazon homepage using NestJS and TypeScript. The project includes a carousel powered by Swiper, responsive layouts, category navigation, and a basic add-to-cart flow (without backend integration).",
-    image: "/images/amazon.png",
-    techStack: ["NestJS", "TypeScript", "Tailwind CSS", "Swiper", "Next.js"],
-    link: "https://amazon-clone.empty.com",
-    category: "Frontend Development",
-  },
-  {
-  id: "luma-event-site",
-  title: "Luma Event Site",
-  description:
-    "Full-stack events app where creators can save events as Draft or Publish, sell tickets via Flutterwave, issue email/NFT-style tickets with attendee check-in, and browse a vendor marketplace (photography, videography, planning, etc.). Includes an admin panel to manage events, users, vendors, services, and posts.",
-  image: "/images/luma.png",
-  techStack: ["Next.js", "React", "Flutterwave", "Tailwind CSS", "Clerk", "Node.js", "Express", "MongoDB", "Mongoose", "Nodemailer"],
-  link: "https://luma-rouge-one.vercel.app/",
-  category: "Full Stack Development",
-}
+};
 
-];
+const cardVariants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
+  },
+};
 
 const Project = () => {
   return (
     <section
       id="project"
-      className="min-h-screen py-20 px-6 bg-gradient-to-b from-white to-gray-50 "
+      className="min-h-screen py-28 px-6 md:px-12 bg-gradient-to-b from-white to-gray-50"
     >
       <div className="max-w-7xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-5xl md:text-6xl font-bold mb-4">
-            Featured Projects
-          </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            A showcase of my recent work and technical expertise
-          </p>
-        </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
-          {projects.map((project, index) => (
-            <motion.div
-              key={project.title}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.2 }}
-              whileHover={{ y: -5 }}
-              className="group relative"
-            >
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-purple-600/10 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
-              <div className="relative bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden group-hover:shadow-2xl transition-all duration-300">
-                {/* Project Image */}
-                <div className="relative h-64 bg-gradient-to-br from-blue-500 to-purple-600 overflow-hidden">
-                  <div className="absolute inset-0 bg-black/20">
-                    <Image
-                      src={project.image}
-                      alt={project.title}
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                  <div className="absolute top-4 left-4 px-3 py-1 bg-gray-900 backdrop-blur-sm rounded-full text-white text-sm font-medium">
-                    {project.category}
-                  </div>
-                </div>
-
-                {/* Project Content */}
-                <div className="p-8">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-3">
-                    {project.title}
-                  </h3>
-                  <p className="text-gray-600 mb-6 leading-relaxed">
-                    {project.description}
-                  </p>
-
-                  {/* Tech Stack */}
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {project.techStack.map((tech) => (
-                      <span
-                        key={tech}
-                        className="px-3 py-1 bg-gradient-to-r from-blue-100 to-purple-100 text-blue-800 rounded-full text-sm font-medium"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-
-                  {/* Project Link */}
-                  <motion.a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-semibold shadow-lg hover:shadow-blue-500/25 transition-all duration-300"
-                  >
-                    View Project <ExternalLink size={16} />
-                  </motion.a>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Call to action for more projects */}
+        {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mt-16"
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          className="mb-20"
         >
-          <p className="text-gray-600 mb-6">Want to see more projects?</p>
+          <div className="flex items-center gap-3 mb-5">
+            <div className="w-8 h-px bg-white/30" />
+            <span className="text-xs font-bold tracking-[0.2em] uppercase text-gray-600">
+              Selected Work
+            </span>
+          </div>
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+            <h2
+              className="text-5xl md:text-7xl font-black text-gray-900 leading-none tracking-tight"
+            >
+              Projects
+            </h2>
+            <p className="text-gray-600 text-base max-w-xs md:text-right leading-relaxed">
+              A curated selection of things I&apos;ve built — click any to explore.
+            </p>
+          </div>
+        </motion.div>
+
+        {/* Project Grid */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-80px" }}
+          className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5"
+        >
+          {projects.map((project, index) => (
+            <motion.div
+              key={project.id}
+              variants={cardVariants}
+              className={
+                // Make first card span 2 cols on xl for visual hierarchy
+                index === 0 ? "xl:col-span-2" : ""
+              }
+            >
+              <Link href={`/projects/${project.id}`} className="group block">
+                <div
+                  className="relative overflow-hidden rounded-2xl *:bg-gradient-to-br *:from-gray-200 *:to-gray-300"
+                >
+                  {/* Image */}
+                  <div
+                    className={`relative overflow-hidden ${
+                      index === 0 ? "h-72 md:h-80" : "h-52 md:h-60"
+                    }`}
+                  >
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      fill
+                      className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                    />
+                    {/* Dark overlay */}
+                    <div
+                      className="absolute inset-0 transition-opacity duration-300"
+                      style={{
+                        background:
+                          "linear-gradient(180deg, rgba(5,5,16,0.1) 0%, rgba(5,5,16,0.55) 100%)",
+                      }}
+                    />
+                    {/* Accent color wash on hover */}
+                    <div
+                      className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                      style={{
+                        background: `linear-gradient(135deg, ${project.accentColor}22 0%, transparent 70%)`,
+                      }}
+                    />
+
+                    {/* Mobile badge */}
+                    {project.type === "mobile" && (
+                      <div
+                        className="absolute top-4 left-4 flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold"
+                        style={{
+                          background: `${project.accentColor}25`,
+                          border: `1px solid ${project.accentColor}50`,
+                          color: project.accentColor,
+                          backdropFilter: "blur(8px)",
+                        }}
+                      >
+                        <Smartphone size={11} />
+                        Mobile
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Bottom info bar */}
+                  <div className="flex items-center justify-between px-5 py-4">
+                    <div className="flex items-center gap-4">
+                      {/* Accent dot */}
+                      <div
+                        className="w-2 h-2 rounded-full flex-shrink-0"
+                        style={{ background: project.accentColor }}
+                      />
+                      <div>
+                        <p className="text-gray-900 font-bold text-sm leading-tight">
+                          {project.title}
+                        </p>
+                        <p className="text-gray-600 text-xs mt-0.5">
+                          {project.category}
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Arrow icon - animates on hover */}
+                    <motion.div
+                      className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 transition-all duration-300 hover:bg-gradient-to-r hover:from-blue-600/20 hover:to-purple-600/20"
+                      whileHover={{ scale: 1.1 }}
+                    >
+                      <ArrowUpRight
+                        size={16}
+                        className="text-gray-500   group-hover:text-gray-900 transition-colors duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                        style={{
+                          transform: "translateX(0) translateY(0)",
+                          transition: "transform 0.3s ease, color 0.3s ease",
+                        }}
+                      />
+                    </motion.div>
+                  </div>
+
+                  {/* Bottom accent line — slides in from left on hover */}
+                  <div className="absolute bottom-0 left-0 h-[2px] w-0 group-hover:w-full transition-all duration-500 ease-out rounded-b-2xl"
+                    style={{ background: `linear-gradient(90deg, ${project.accentColor}, ${project.accentColor}00)` }}
+                  />
+                </div>
+              </Link>
+            </motion.div>
+          ))}
+        </motion.div>
+
+        {/* Footer CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4, delay: 0.3 }}
+          className="mt-16 flex items-center justify-between"
+        >
+          <div className="h-px flex-1 bg-gray-400" />
           <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
             onClick={() =>
               document
                 .getElementById("contact")
                 ?.scrollIntoView({ behavior: "smooth" })
             }
-            className="px-8 py-4 border-2 border-gray-300 text-gray-700 rounded-full font-semibold hover:border-blue-500 hover:text-blue-600 transition-all duration-300"
+            whileHover={{ scale: 1.04, y: -1 }}
+            whileTap={{ scale: 0.97 }}
+            className="mx-6 px-6 py-3 rounded-xl text-sm font-semibold text-gray-600 hover:text-gray-900 transition-all duration-300 bg-gradient-to-r from-blue-600/10 to-purple-600/10 hover:bg-gradient-to-r hover:from-blue-600/20 hover:to-purple-600/20"
           >
-            Let&apos;s Discuss Your Project
+            Let&apos;s build something together →
           </motion.button>
+          <div className="h-px flex-1 bg-gray-400" />
         </motion.div>
+
       </div>
     </section>
   );
 };
-
 
 export default Project;

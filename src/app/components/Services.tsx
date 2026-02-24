@@ -1,47 +1,19 @@
 "use client";
 
-import { Code, Database, Palette, Server, Smartphone, Zap } from "lucide-react";
+// import { Code, Database, Palette, Server, Smartphone, Zap } from "lucide-react";
 import { motion } from "framer-motion";
 import { FloatingParticles } from "./FloatingParticules";
+import * as Icons from "lucide-react";
+import { services } from "@/data";
 
-const services = [
-    {
-      icon: Code,
-      title: "Frontend Development",
-      description: "Building responsive, interactive user interfaces with React, Next.js, and modern CSS frameworks.",
-      features: ["React.js", "Next.js", "Tailwind CSS", "TypeScript"]
-    },
-    {
-      icon: Server,
-      title: "Backend Development", 
-      description: "Creating robust server-side applications with Node.js, Express, and database integration.",
-      features: ["Node.js", "Express.js", "MongoDB", "JWT Auth"]
-    },
-    {
-      icon: Palette,
-      title: "UI/UX Design",
-      description: "Designing intuitive and visually appealing interfaces that prioritize user experience.",
-      features: ["Figma", "Responsive Design", "User Research", "Prototyping"]
-    },
-    {
-      icon: Zap,
-      title: "Performance Optimization",
-      description: "Optimizing applications for speed, SEO, and scalability with best practices.",
-      features: ["SEO", "Core Web Vitals", "Caching", "Bundle Optimization"]
-    },
-    {
-      icon: Smartphone,
-      title: "Mobile-First Design",
-      description: "Ensuring perfect functionality across all devices with responsive design principles.",
-      features: ["Responsive Design", "Mobile Optimization", "Cross-browser", "PWA"]
-    },
-    {
-      icon: Database,
-      title: "Full-Stack Solutions",
-      description: "End-to-end application development from database design to deployment.",
-      features: ["API Design", "Database Design", "Authentication", "Deployment"]
-    }
-  ];
+const iconMap: Record<string, React.ElementType> = {
+  Code: Icons.Code,
+  Database: Icons.Database,
+  Palette: Icons.Palette,
+  Server: Icons.Server,
+  Smartphone: Icons.Smartphone,
+  Zap: Icons.Zap,
+};
 
 const Services = () => {
 
@@ -67,7 +39,7 @@ return (
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => {
-            const Icon = service.icon;
+            const Icon = iconMap[service.icon] || Icons.HelpCircle;
             return (
               <motion.div
                 key={service.title}

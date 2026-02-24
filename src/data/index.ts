@@ -202,7 +202,7 @@ export const projects: Project[] = [
        "2FA security",
        "Email notifications",
      ],
-     apkUrl: "/apk/chatnest/ChatNest.apk",
+    apkUrl: "https://github.com/opemich/portfolio/releases/download/Apk/ChatNest.apk",
     apkSize: 200,
     appStoreLink: "",
     playStoreLink: "",

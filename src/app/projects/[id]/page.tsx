@@ -22,6 +22,7 @@ import {
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useState, useRef } from "react";
+import { use } from "react";
 import { projects } from "@/data";
 
 const containerVariants = {
@@ -43,8 +44,10 @@ const itemVariants = {
 
 export default function ProjectPage({ params }: { params: Promise<{ id: string }> }) {
   const resolvedParams = params as any;
-  const projectId = resolvedParams.id;
-  const project = projects.find(p => p.id === projectId);
+  // const projectId = resolvedParams.id;
+  // const project = projects.find(p => p.id === projectId);
+  const { id } = use(params);
+  const project = projects.find(p => p.id === id);
 
   const router = useRouter();
   const [downloading, setDownloading] = useState(false);
@@ -78,29 +81,45 @@ export default function ProjectPage({ params }: { params: Promise<{ id: string }
     );
   }
 
-  const handleAPKDownload = async () => {
-    setDownloading(true);
-    try {
-      if (!project.apkUrl) throw new Error('APK URL not found');
-      const response = await fetch(project.apkUrl);
-      const blob = await response.blob();
-      const url = window.URL.createObjectURL(blob);
-      const link = document.createElement("a");
-      link.href = url;
-      link.setAttribute("download", `${project.title}.apk`);
-      document.body.appendChild(link);
-      link.click();
-      link.parentNode?.removeChild(link);
-      window.URL.revokeObjectURL(url);
-      setDownloadDone(true);
-      setTimeout(() => setDownloadDone(false), 3000);
-    } catch (error) {
-      console.error("Download failed:", error);
-      alert("Failed to download APK. Please try again.");
-    } finally {
-      setDownloading(false);
-    }
-  };
+  // const handleAPKDownload = async () => {
+  //   setDownloading(true);
+  //   try {
+  //     if (!project.apkUrl) throw new Error('APK URL not found');
+  //     const response = await fetch(project.apkUrl);
+  //     const blob = await response.blob();
+  //     const url = window.URL.createObjectURL(blob);
+  //     const link = document.createElement("a");
+  //     link.href = url;
+  //     link.setAttribute("download", `${project.title}.apk`);
+  //     document.body.appendChild(link);
+  //     link.click();
+  //     link.parentNode?.removeChild(link);
+  //     window.URL.revokeObjectURL(url);
+  //     setDownloadDone(true);
+  //     setTimeout(() => setDownloadDone(false), 3000);
+  //   } catch (error) {
+  //     console.error("Download failed:", error);
+  //     alert("Failed to download APK. Please try again.");
+  //   } finally {
+  //     setDownloading(false);
+  //   }
+  // };
+
+  const handleAPKDownload = () => {
+  if (!project.apkUrl) return;
+
+  // Create a hidden anchor
+  const link = document.createElement('a');
+  link.href = project.apkUrl;
+  link.download = `${project.title}.apk`; // Suggest a filename
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+
+  // Show a brief success message (optional)
+  setDownloadDone(true);
+  setTimeout(() => setDownloadDone(false), 3000);
+};
 
   const accent = project.accentColor || "#6366f1";
   const accentSecondary = project.accentColorSecondary || "#818cf8";

@@ -1,20 +1,16 @@
 "use client";
 
 import { motion } from "framer-motion"
-// import {
-//   Mail,
-//   Github,
-//   Linkedin,
-//   Twitter,
-// } from "lucide-react";
 import * as Icons from "lucide-react";
 import { socialLinks, personalInfo } from "@/data";
 
 const iconMap: Record<string, React.ElementType> = {
-  github: Icons.Github,
-  linkedin: Icons.Linkedin,
-  twitter: Icons.Twitter,
-  mail: Icons.Mail,
+  Github: Icons.Github,
+  Linkedin: Icons.Linkedin,
+  Twitter: Icons.Twitter,
+  Instagram: Icons.Instagram,
+  Facebook: Icons.Facebook,
+  Mail: Icons.Mail,
 };
 
 const Footer = () => {
@@ -50,12 +46,6 @@ return (
           <div>
             <h4 className="font-semibold mb-4 text-white">Connect</h4>
             <div className="flex gap-4">
-              {/* {[
-                { icon: Github, href: "https://github.com/opemich" },
-                { icon: Linkedin, href: "https://www.linkedin.com/in/onaopemipo-michael-784147300/" },
-                { icon: Twitter, href: "https://x.com/Priest077" },
-                { icon: Mail, href: "mailto:onaopemipomichael1999@gmail.com" },
-              ].map((social, index) => { */}
               {socialLinks.map((social, index) => {
                 const IconMap = iconMap[social.icon] || Icons.HelpCircle;
                 return (
